@@ -46,6 +46,7 @@ class GUI:
         li=[1,2,3,4,5,6,7,8]
         print(li)
         for i in range(int(len(li))-1,-1,-1):
-            print(li[i])         
+            print(li[i])   
+                  
 gui=GUI()
 gui.interfaz()        

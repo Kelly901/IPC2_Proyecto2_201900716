@@ -17,6 +17,7 @@ class CargarArchivo:
         cadena=""
         cont3=0
         nombre=""
+        contador=0
 
         #Fors
         for element in root:
@@ -56,7 +57,8 @@ class CargarArchivo:
                             matriz.insertar(i,j,cadena[cont3],cont3)
                             cont3+=1
                     #Guardar las matrices
-                    self.lista.insertar_final(nombre,fila,columna,matriz)         
+                    contador+=1
+                    self.lista.insertar_final(contador,nombre,fila,columna,matriz)         
                     #print("_______________")
                     #self.matriz.recorrerFilas()
                     cadena=""
@@ -64,5 +66,15 @@ class CargarArchivo:
                     #print(cadena)
         self.lista.mostrar() 
         print("_______________________")
-        self.lista.vertical()          
-               
+        self.lista.horizontal(2)          
+        print("_______________________")
+        self.lista.vertical(2)
+        print("___________")
+        print("____Transpuesta   _____")       
+        self.lista.transpuesta(2)
+        print("_____Limpiar area_____")
+        self.lista.limpiarArea(2,1,1,2,2)
+        print("______Agregar linea de la fila ______")
+        self.lista.agregar_linea_horizontal(1,2,4,6)
+        print("_______Agrega linea en columna________")
+        self.lista.agregar_linea_vertical(1,1,2,2)
