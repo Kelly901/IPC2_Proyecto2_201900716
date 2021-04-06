@@ -79,15 +79,15 @@ class MatrizHorizontal:
         print(">>>>>>>>>>>>>>Fin<<<<<<<<<<<<<<<<<")   
 
 
-    '''def retornarFila(self,fila):
+    def retornarFila(self,fila):
         efila=self.encabezadoFilas.primero
-        print(fila)
+       
         cadena=""
         while efila!=None:
             actual=efila.acceso
             #print(efila)
             if int(actual.fila)==fila:
-                print(actual.fila)
+                
                 while actual!=None:
                 #print(actual.id)
                 
@@ -103,7 +103,7 @@ class MatrizHorizontal:
                     return cadena    
             efila=efila.siguiente  
                       
-    def retornarColumna(self,columna):
+    '''def retornarColumna(self,columna):
         
         eColumna=self.encabezadoColumnas.primero
         print(columna)

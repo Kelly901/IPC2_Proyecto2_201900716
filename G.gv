@@ -1,0 +1,20 @@
+digraph G {
+	label=Listo
+	S [label="
+            <<table>
+                <tr>
+                <td>H</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                <tr>
+                <td>H</td>
+                <td>o</td>
+                <td>L</td>
+                <td>A</td>
+                </tr>    
+                </table>>
+            
+        " shape=none]
+}

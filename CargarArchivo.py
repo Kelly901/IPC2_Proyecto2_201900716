@@ -64,17 +64,19 @@ class CargarArchivo:
                     cadena=""
                     cont3=0
                     #print(cadena)
-        self.lista.mostrar() 
-        print("_______________________")
+        '''self.lista.mostrar() 
+        print("_______________________")ya
         self.lista.horizontal(2)          
-        print("_______________________")
-        self.lista.vertical(2)
+        print("_______________________")ya
+        self.lista.vertical(2)ya
         print("___________")
-        print("____Transpuesta   _____")       
+        print("____Transpuesta   _____")      ya 
         self.lista.transpuesta(2)
         print("_____Limpiar area_____")
-        self.lista.limpiarArea(2,1,1,2,2)
+        self.lista.limpiarArea(2,1,1,2,2) ya
         print("______Agregar linea de la fila ______")
         self.lista.agregar_linea_horizontal(1,2,4,6)
         print("_______Agrega linea en columna________")
         self.lista.agregar_linea_vertical(1,1,2,2)
+        print("________Agregar Rectangulo_____________")
+        self.lista.agrega_un_rectangulo(2,1,1,2,3)'''

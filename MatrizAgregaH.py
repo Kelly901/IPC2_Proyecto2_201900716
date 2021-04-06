@@ -79,4 +79,26 @@ class MatrizAgregaH:
         print(">>>>>>>>>>>>>>Fin<<<<<<<<<<<<<<<<<")   
 
 
-  
+    def retornarFila(self,fila):
+        efila=self.encabezadoFilas.primero
+        print(fila)
+        cadena=""
+        while efila!=None:
+            actual=efila.acceso
+            #print(efila)
+            if int(actual.fila)==fila:
+                print(actual.fila)
+                while actual!=None:
+                #print(actual.id)
+                
+                    #print("hola")  
+                    #print(actual.fila)
+                    #print(actual.columna)  
+                    cadena+=actual.valor
+                    
+                    
+                    actual=actual.derecha
+
+                if cadena!="None":    
+                    return cadena    
+            efila=efila.siguiente  

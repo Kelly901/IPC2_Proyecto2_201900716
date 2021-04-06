@@ -153,72 +153,96 @@ class Matriz:
         efila = self.encabezadoFilas.primero
         while efila != None:
             actual = efila.acceso
-                        # print(efila)
+            # print(efila)
             if int(actual.fila) == fila:
                 print(actual.fila)
                 while actual != None:
-                    if int(actual.columna)==columna:
+                    if int(actual.columna) == columna:
                         print(actual.columna)
-                                    # print(actual.id)
+                        # print(actual.id)
 
-                                    # print("hola")
-                                 # print(actual.fila)
-                                # print(actual.columna)
-                        print("fila",actual.fila)
-                        print("columna",actual.columna)
+                        # print("hola")
+                        # print(actual.fila)
+                        # print(actual.columna)
+                        print("fila", actual.fila)
+                        print("columna", actual.columna)
                         print("-")
-                        actual.valor="-"
-                        #3726023
+                        actual.valor = "-"
+                        # 3726023
 
                     actual = actual.derecha
 
             efila = efila.siguiente
 
-    #Metodo para retornar la fila agregada
-    def fila_agregada(self,fila,columna):
+    # Metodo para retornar la fila agregada
+    def fila_agregada(self, fila, columna):
+        print("Entrada")
         efila = self.encabezadoFilas.primero
+        print(fila)
         while efila != None:
             actual = efila.acceso
-                        # print(efila)
+            # print(efila)
             if int(actual.fila) == fila:
                 print(actual.fila)
                 while actual != None:
-                    if int(actual.columna)==columna:
+                    if int(actual.columna) == columna:
                         print(actual.columna)
-                                    # print(actual.id)
+                        # print(actual.id)
 
-                                    # print("hola")
-                                 # print(actual.fila)
-                                # print(actual.columna)
-                        
-                  
-                        actual.valor="$"
-                        #3726023
+                        # print("hola")
+                        # print(actual.fila)
+                        # print(actual.columna)
+
+                        actual.valor = "*"
+                        # 3726023
 
                     actual = actual.derecha
 
             efila = efila.siguiente
 
-
-    #Metodo para retornar la columna agregada
-    def columna_agregada(self,fila,columna):
+    # Metodo para retornar la columna agregada
+    def columna_agregada(self, fila, columna):
         eColumna = self.encabezadoColumnas.primero
-      
+
         while eColumna != None:
             actual = eColumna.acceso
             # print(efila)
             if int(actual.columna) == columna:
-              
+
                 while actual != None:
                     if int(actual.fila) == fila:
-                    # print(actual.id)
+                        # print(actual.id)
 
-                    # print("hola")
-                    # print(actual.fila)
-                    # print(actual.columna)
-                        actual.valor= "x"
+                        # print("hola")
+                        # print(actual.fila)
+                        # print(actual.columna)
+                        actual.valor = "*"
 
                     actual = actual.abajo
 
-            
-            eColumna = eColumna.siguiente                
+            eColumna = eColumna.siguiente
+
+    # Agregr rectangulo
+    def agregarRectangulo(self, fila, columna):
+        efila = self.encabezadoFilas.primero
+        while efila != None:
+            actual = efila.acceso
+            # print(efila)
+            if int(actual.fila) == fila:
+                print(actual.fila)
+                while actual != None:
+                    if int(actual.columna) == columna:
+                        print(actual.columna)
+                        # print(actual.id)
+
+                        # print("hola")
+                        # print(actual.fila)
+                        # print(actual.columna)
+                        
+                    
+                        actual.valor = "*"
+                        # 3726023
+
+                    actual = actual.derecha
+
+            efila = efila.siguiente

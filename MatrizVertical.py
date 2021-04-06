@@ -79,7 +79,7 @@ class MatrizVertical:
         print(">>>>>>>>>>>>>>Fin<<<<<<<<<<<<<<<<<")   
 
 
-    '''def retornarFila(self,fila):
+    def retornarFila(self,fila):
         efila=self.encabezadoFilas.primero
         print(fila)
         cadena=""
@@ -103,27 +103,4 @@ class MatrizVertical:
                     return cadena    
             efila=efila.siguiente  
                       
-    def retornarColumna(self,columna):
-        
-        eColumna=self.encabezadoColumnas.primero
-        print(columna)
-        cadena=""
-        while eColumna!=None:
-            actual=eColumna.acceso
-            #print(efila)
-            if int(actual.columna)==columna:
-                print(actual.columna)
-                while actual!=None:
-                #print(actual.id)
-                
-                    #print("hola")  
-                    #print(actual.fila)
-                    #print(actual.columna)  
-                    cadena+=actual.valor
-                    
-                    
-                    actual=actual.abajo
-
-                    
-                return cadena    
-            eColumna=eColumna.siguiente  '''
+   

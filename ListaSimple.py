@@ -7,20 +7,31 @@ from ListaSimpleLimpiar import ListaSimpleLimpiar
 from MatrizLimpiar import MatrizLimpiar
 from ListaSimpleAgregarH import ListaSimpleAgregarH
 from MatrizAgregaH import MatrizAgregaH
-
+from ListaSimpleTransp import ListaSimpleTransp
+from MatrizTransp import MatrizTransp
+from ListaSimpleAgV import ListaSimpleAgV
+from MatrizAgregarV import MatrizAgregaV
+from ListaSimpleRectangulo import ListaSimpleRectangulo
+from MatrizRectangulo import MatrizRectangulo
 from Matriz import Matriz
 
 
 
 class ListaSimple:
     # Lista en donde se almacena la matriz que se giro de forma horizontal
-    listaH = ListaSimpleH()
+    listaH = ListaSimpleH() 
     # Lista en donde se alamacena la matriz que se giro de forma vertical
     listaV = ListaSimpleV()
     # Lista para almacenar las matrices cuando se limpiar un area
     listaLimpiar = ListaSimpleLimpiar()
     #Lista para almacenar un matriz agregando una linea horizontal.
     listaAgregaH=ListaSimpleAgregarH()
+    #Lista para alamcenar una matriz transpuesta
+    listaTranspuesta=ListaSimpleTransp()
+    #Lista para almacena una matriz agregando una linea vertical
+    listaVertical=ListaSimpleAgV()
+    #Lista para agregar un rectangulo
+    listaRectangulo=ListaSimpleRectangulo()
     def __init__(self):
         self.cabeza = None
 
@@ -131,6 +142,7 @@ class ListaSimple:
 
     # Transpuesta de la matriz
     def transpuesta(self, id):
+        matriz=MatrizTransp()
         # matriz=MatrizVertical()
         #
         temp = self.cabeza
@@ -162,12 +174,14 @@ class ListaSimple:
 
                 # matriz.insertar(j, i, cadena[c])
                 print("\t", cadena[c], end=" ")
+                matriz.insertar(i,j,cadena[c])
+                
                 c += 1
             print()
         # self.listaV.insertar_final(id,nombre,fila,columna,matriz)
         print("_____________-")
         # self.listaV.mostrar()
-
+        self.listaTranspuesta.insertar_final(id,nombre,columna,fila,matriz)
     # Metodo para limpiar
 
     def limpiarArea(self, id, f1, c1, f2, c2):
@@ -283,7 +297,7 @@ class ListaSimple:
                 matriz1.fila_agregada(f1,j)
         #----------------------------
 
-        #matriz1.recorrerFilas()
+        matriz1.recorrerFilas()
         #____________________________
         efila=matriz1.encabezadoFilas.primero
         while efila !=None:
@@ -311,7 +325,7 @@ class ListaSimple:
         columna = 0
         nombre = ""
         matriz1=Matriz()
-
+        matriz=MatrizAgregaV()
       
   
         while temp is not None:
@@ -343,3 +357,75 @@ class ListaSimple:
                 matriz1.columna_agregada(i,col)
         #----------------------------
         matriz1.recorrerFilas()
+        #_________________
+        efila=matriz1.encabezadoFilas.primero
+        #_____________________________ 
+
+        
+        #____________________________
+        efila=matriz1.encabezadoFilas.primero
+        while efila !=None:
+            actual=efila.acceso
+            while actual!=None:
+                matriz.insertar(actual.fila,actual.columna,actual.valor)
+
+                actual=actual.derecha
+            efila=efila.siguiente    
+        
+        self.listaVertical.insertar_final(id,nombre,fila,columna,matriz)
+    
+    #Agregar un rectangulo
+
+    def agrega_un_rectangulo(self,id,x,y,filas,columnas):
+        temp = self.cabeza
+        cont = 0
+        cadena = ""
+        cadena2 = ""
+        fila = 0
+        columna = 0
+        nombre = ""
+        matriz1=Matriz()
+        matriz=MatrizRectangulo()
+        #matriz = MatrizLimpiar()
+        numeros = ""
+        while temp is not None:
+            if temp.id == id:
+
+                nombre = temp.nombre
+                total = int(temp.nFila)*int(temp.nColumna)
+                fila = int(temp.nFila)
+                columna = int(temp.nColumna)
+                for i in range(fila):
+                    cadena += temp.matriz.retornarFila(i)
+
+            temp = temp.siguiente
+        # -----------
+        c = 0
+        for i in range(fila):
+            for j in range(columna):
+                matriz1.insertar(i,j,cadena[c],c)
+                c += 1
+
+        matriz1.recorrerFilas() 
+        
+        efila=matriz1.encabezadoFilas.primero
+        for i in range(x,x+filas):
+            for j in range(y,y+columnas):
+                print(i,j)
+                matriz1.agregarRectangulo(i,j)
+        
+        matriz1.recorrerFilas()
+
+        #______
+        efila=matriz1.encabezadoFilas.primero
+        while efila !=None:
+            actual=efila.acceso
+            while actual!=None:
+                matriz.insertar(actual.fila,actual.columna,actual.valor)
+
+                actual=actual.derecha
+            efila=efila.siguiente    
+        
+        self.listaRectangulo.insertar_final(id,nombre,fila,columna,matriz)
+        
+        
