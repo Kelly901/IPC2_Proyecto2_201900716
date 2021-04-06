@@ -2,6 +2,7 @@ from tkinter import*
 from tkinter import filedialog as FileDialog
 from tkinter import ttk
 from CargarArchivo import CargarArchivo
+from tkinter import messagebox as MessageBox
 import sys
 from Imagen import Imagen
 cargarArchivo=CargarArchivo()
@@ -62,7 +63,7 @@ class GUI:
         self.frameP.config(width="810",height="90")
         self.frameP.config(bg="black")
         self.frame.place(x=0,y=90)
-        self.frame.config(width="810",height="500")
+        self.frame.config(width="810",height="600")
         self.frame.config(bg="black")
 
         #Agregar boton
@@ -216,7 +217,7 @@ class GUI:
             imagen.crear_imagen_rotacionH(self.id)
             imagen_horizontal=PhotoImage(file="imagenHorizontal.png")
             self.widgetH=Label(self.frame,image=imagen_horizontal)
-            self.widgetH.place(x=420,y=90)
+            self.widgetH.place(x=420,y=150)
 
             self.raiz.mainloop()
         elif numero==2:
@@ -231,7 +232,7 @@ class GUI:
             imagen.crear_imagen_rotacionV(self.id)
             imagen_vertical=PhotoImage(file="imagenVertical.png")
             self.widgetV=Label(self.frame,image=imagen_vertical)
-            self.widgetV.place(x=420,y=90)
+            self.widgetV.place(x=420,y=150)
             self.raiz.mainloop()
             print("rotacion Vertical")
         elif numero==3:
@@ -245,7 +246,7 @@ class GUI:
             imagen.crear_imagen_transpuesta(self.id)
             imagen_transpuesta=PhotoImage(file="imagenTranspuesta.png")
             self.widgetT=Label(self.frame,image=imagen_transpuesta)
-            self.widgetT.place(x=420,y=90)
+            self.widgetT.place(x=420,y=150)
             self.raiz.mainloop()
             print("Transpuesta")
         elif numero==4:
@@ -259,7 +260,7 @@ class GUI:
             imagen.crear_imagen_LimpiarZona(self.id)
             imagen_Limpiar=PhotoImage(file="imagenLimpiarZona.png")
             self.widgetLimpiar=Label(self.frame,image=imagen_Limpiar)
-            self.widgetLimpiar.place(x=420,y=90)
+            self.widgetLimpiar.place(x=420,y=150)
             self.raiz.mainloop()
             print("Limpiar zona")
 
@@ -274,7 +275,7 @@ class GUI:
             imagen.crear_imagen_agregaH(self.id)
             imagen_agregarH=PhotoImage(file="imagenAgregarH.png")
             self.widgetAg=Label(self.frame,image=imagen_agregarH)
-            self.widgetAg.place(x=420,y=120)
+            self.widgetAg.place(x=420,y=150)
             self.raiz.mainloop()
             print("Agregar linea horizontal")   
 
@@ -288,7 +289,7 @@ class GUI:
             imagen.crear_imagen_agregaV(self.id)
             imagen_agregarH=PhotoImage(file="imagenAgregarV.png")
             self.widgetAv=Label(self.frame,image=imagen_agregarH)
-            self.widgetAv.place(x=420,y=90)
+            self.widgetAv.place(x=420,y=150)
             self.raiz.mainloop()
 
 
@@ -305,7 +306,7 @@ class GUI:
             imagen.crear_imagen_agregaRec(self.id)
             imagen_agregarH=PhotoImage(file="imagenAgregarRec.png")
             self.widgetRec=Label(self.frame,image=imagen_agregarH)
-            self.widgetRec.place(x=420,y=120)
+            self.widgetRec.place(x=420,y=150)
             self.raiz.mainloop()
             print("Agregar rectangulo")   
         elif numero==2:
@@ -316,13 +317,7 @@ class GUI:
            
         print("limpiados")  
     def ayuda(self):
-        raiz2=Tk()
-        frame2=Frame()  
-        frame2.place(x=0,y=0)
-        frame2.config(width="100",height="90")
-        frame2.config(bg="black")     
-        
-        raiz2.mainloop()      
+        MessageBox.showinfo("Datos del estudiante","Curso: IPC2\nKelly Mischel Herrera Esipno \n Carnet: 201900716")
 
 gui=GUI()
 gui.interfaz()        
